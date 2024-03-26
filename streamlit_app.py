@@ -1,7 +1,6 @@
 import streamlit as st
 from io import BytesIO
 from PIL import Image
-import keras
 import numpy as np
 import tensorflow as tf
 
@@ -31,9 +30,9 @@ add_bg_from_url()
 
 new_image = st.file_uploader(label='Upload your file',type='jpeg')         # upload file
 
-model = keras.models.load_model('plant6.keras')     #load the model
+model = tf.keras.models.load_model('plant6.keras')     #load the model
 model.save('plant6.keras', overwrite=True)
-model = keras.models.load_model('plant6.keras')
+model = tf.keras.models.load_model('plant6.keras')
 
 
 
